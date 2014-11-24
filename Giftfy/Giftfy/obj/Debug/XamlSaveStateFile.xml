@@ -1,0 +1,11 @@
+<XamlCompilerSaveState>
+  <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\giftfy\obj\debug\intermediatexaml\giftfy.exe" HashGuid="71ee1992-59ef-00af-ac97-f47369e0803f" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.mvvm.1.1.1\lib\wpa81\microsoft.practices.prism.mvvm.dll" HashGuid="cbdd458f-3f7b-91dd-175a-6fbe0d8f860e" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.mvvm.1.1.1\lib\wpa81\microsoft.practices.prism.mvvm.phone.dll" HashGuid="347692ae-d3bb-41c8-00a0-1222d3d82e87" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.pubsubevents.1.1.2\lib\portable-sl5+windowsphone8+windows8+net40+wpa81\microsoft.practices.prism.pubsubevents.dll" HashGuid="c373fc99-68a2-04f4-f041-14986b4a3636" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.mvvm.1.1.1\lib\wpa81\microsoft.practices.prism.sharedinterfaces.dll" HashGuid="77ddb96d-234e-bbe6-7043-530fe79bc489" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.storeapps.2.0.0\lib\wpa81\microsoft.practices.prism.storeapps.dll" HashGuid="480782f1-e4b6-714d-0927-945a03634ad1" />
+    <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.storeapps.2.0.0\lib\wpa81\microsoft.practices.prism.storeapps.phone.dll" HashGuid="aa6e2f7a-71df-e1ca-7524-7ca1d4a1bf08" />
+  </ReferenceAssemblyList>
+</XamlCompilerSaveState>
