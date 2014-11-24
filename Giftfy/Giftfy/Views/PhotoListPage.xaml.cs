@@ -14,13 +14,14 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
+using Microsoft.Practices.Prism.Mvvm;
 
 namespace Giftfy.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PhotoListPage : Page
+    public sealed partial class PhotoListPage : Page, IView
     {
         public PhotoListPage()
         {

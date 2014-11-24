@@ -1,6 +1,8 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\giftfy\obj\debug\intermediatexaml\giftfy.exe" HashGuid="71ee1992-59ef-00af-ac97-f47369e0803f" />
+    <LocalAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\giftfy\obj\debug\intermediatexaml\giftfy.exe" HashGuid="f1f3450d-9a6b-d28b-15db-9d6fd428eec3" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
+    <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.mvvm.1.1.1\lib\wpa81\microsoft.practices.prism.mvvm.dll" HashGuid="cbdd458f-3f7b-91dd-175a-6fbe0d8f860e" />
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.mvvm.1.1.1\lib\wpa81\microsoft.practices.prism.mvvm.phone.dll" HashGuid="347692ae-d3bb-41c8-00a0-1222d3d82e87" />
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.pubsubevents.1.1.2\lib\portable-sl5+windowsphone8+windows8+net40+wpa81\microsoft.practices.prism.pubsubevents.dll" HashGuid="c373fc99-68a2-04f4-f041-14986b4a3636" />

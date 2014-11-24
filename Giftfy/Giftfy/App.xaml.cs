@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Navigation;
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 using Giftfy.Views;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.Mvvm.Interfaces;
 
 namespace Giftfy
 {
@@ -30,7 +31,9 @@ namespace Giftfy
     {
         private TransitionCollection transitions;
 
-        /// <summary>
+        public INavigationService navigationService;
+
+        /// <summary> 
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
@@ -61,6 +64,9 @@ namespace Giftfy
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
+
+            this.navigationService = this.NavigationService;
+
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active

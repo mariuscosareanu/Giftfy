@@ -60,3 +60,5 @@ C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\obj\Debug\Multip
 C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\obj\Debug\Microsoft.Practices.Prism.StoreApps.pri.xml
 C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\obj\Debug\Microsoft.Practices.Prism.StoreApps.Phone.pri.xml
 C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\obj\Debug\ProjectArchitectures.txt
+C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\bin\Debug\Microsoft.Xaml.Interactions.dll
+C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\bin\Debug\Microsoft.Xaml.Interactivity.dll

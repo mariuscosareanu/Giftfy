@@ -89,6 +89,7 @@
     <Compile Include="Models\PhotoItem.cs" />
     <Compile Include="Models\PhotoList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PhotoListPageViewModel.cs" />
     <Compile Include="ViewModels\PhotoListsPageViewModel.cs" />
     <Compile Include="ViewModels\PhotoListViewModel.cs" />
     <Compile Include="Views\PhotoListPage.xaml.cs">
@@ -152,7 +153,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
+      <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
