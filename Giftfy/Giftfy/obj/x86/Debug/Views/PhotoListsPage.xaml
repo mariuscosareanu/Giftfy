@@ -9,15 +9,21 @@
     xmlns:designViewModels="using:Giftfy.DesignViewModels"
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:converters="using:Giftfy.Converters"
     mc:Ignorable="d"
     mvvm:ViewModelLocator.AutoWireViewModel="true"
     d:DataContext="{d:DesignInstance designViewModels:PhotoListsDesignViewModel, IsDesignTimeCreatable=True}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
+        <converters:BooleanNegationToVisibilityConverter x:Key="NotBoolToVis" />
+    </Page.Resources>
+    
     <Page.BottomAppBar>
-        <CommandBar x:Name="appBar">
+        <CommandBar x:Name="appBar" Visibility="{Binding NewListVisible, Converter={StaticResource NotBoolToVis}}">
             <CommandBar.PrimaryCommands>
-                <AppBarButton IsCompact="False" Label="New list" Icon="Add"/>
+                <AppBarButton IsCompact="False" Label="New list" Icon="Add" Command="{Binding ShowNewListCommand}"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
@@ -32,7 +38,12 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" FontWeight="Bold" Text="Giftfy"></TextBlock>
-        <GridView ItemsSource="{Binding Lists}" Grid.Row="1" Grid.Column="0">
+        <GridView  Margin="10,0,0,0" Visibility="{Binding NewListVisible, Converter={StaticResource NotBoolToVis}}" ItemsSource="{Binding Lists}" Grid.Row="1" Grid.Column="0">
+            <GridView.Transitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition/>
+                </TransitionCollection>
+            </GridView.Transitions>
             <GridView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapGrid Orientation="Horizontal"></WrapGrid>
@@ -44,7 +55,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="180" />
                         </Grid.RowDefinitions>
-                        <Border BorderThickness="1" Margin="5" BorderBrush="#95a5a6">
+                        <Border BorderThickness="1" Margin="5,5,0,5" BorderBrush="#95a5a6">
                             <StackPanel Width="180" Background="#1abc9c">
                                 <TextBlock Text="{Binding Title}"
                            TextWrapping="Wrap"
@@ -72,6 +83,11 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
+        <StackPanel Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" Margin="0,100,0,0" HorizontalAlignment="Center" Grid.Row="1">
+            <TextBlock FontSize="20">Choose name</TextBlock>
+            <TextBox Text="{Binding NewListName, Mode=TwoWay}"></TextBox>
+            <Button Command="{Binding NewListCommand}">Add</Button>
+        </StackPanel>
     </Grid>
 
 </Page>

@@ -6,6 +6,7 @@ Assets\StoreLogo.scale-240.png
 Assets\WideLogo.scale-240.png
 App.xbf
 Giftfy.xr.xml
-MainPage.xbf
 Views\PhotoListPage.xbf
 Views\PhotoListsPage.xbf
+Lib\Microsoft.Practices.Unity.NetCore.dll
+Lib\Microsoft.Practices.Unity.NetCore.xml

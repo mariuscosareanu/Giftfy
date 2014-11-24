@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
@@ -18,7 +19,7 @@ namespace Giftfy.Services
     {
         private string DataPath = "photosList.json";
 
-        private readonly SQLiteConnection db;
+        private SQLiteConnection db;
 
         public PhotoListsService()
         {
@@ -30,13 +31,14 @@ namespace Giftfy.Services
             return db.Table<PhotoLists>().Select(x => new PhotoListModel
             {
                 Id = x.Id,
-                Name = x.Name
+                Name = x.Name,
+                Timestamp = x.Timestamp
             }).ToList();
         }
 
         public PhotoListModel Get(int listId)
         {
-            var model = db.Table<PhotoLists>().FirstOrDefault(x => x.Id == listId);
+            var model = db.Get<PhotoLists>(listId);
 
             return new PhotoListModel
             {
@@ -47,11 +49,16 @@ namespace Giftfy.Services
 
         public int Add(PhotoListModel model)
         {
-            return db.Insert(new PhotoLists
-            {
-                Name = model.Name,
-                Timestamp = DateTime.Now
-            });
+            var dbModel = new PhotoLists
+                {
+                    Name = model.Name,
+                    Timestamp = DateTime.Now
+                };
+            
+
+            db.RunInTransaction(() => db.Insert(dbModel));
+
+            return dbModel.Id;
         }
     }
 }

@@ -10,7 +10,5 @@
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.storeapps.2.0.0\lib\wpa81\microsoft.practices.prism.storeapps.dll" HashGuid="480782f1-e4b6-714d-0927-945a03634ad1" />
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\prism.storeapps.2.0.0\lib\wpa81\microsoft.practices.prism.storeapps.phone.dll" HashGuid="aa6e2f7a-71df-e1ca-7524-7ca1d4a1bf08" />
     <ReferenceAssembly PathName="c:\users\marius.cosareanu\documents\github\giftfy\giftfy\packages\newtonsoft.json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="9e796421-3b84-3ec5-6e39-cb6d41d020b7" />
-    <ReferenceAssembly PathName="c:\program files (x86)\reference assemblies\microsoft\framework\v3.5\system.componentmodel.dataannotations.dll" HashGuid="fe4afa5f-74d6-dfa6-9ff3-0729afeccea1" />
-    <ReferenceAssembly PathName="c:\program files (x86)\reference assemblies\microsoft\framework\v3.5\system.data.entity.dll" HashGuid="26b4cfd8-b496-b1e7-0a49-a369cb6f51ea" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

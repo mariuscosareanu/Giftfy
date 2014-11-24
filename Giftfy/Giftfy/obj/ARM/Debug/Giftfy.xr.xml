@@ -1,9 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.Interfaces>
+    <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
+  </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="OpenPicturePickerCommand" />
+    <RootPropertyPathName Name="NewListVisible" />
+    <RootPropertyPathName Name="ShowNewListCommand" />
+    <RootPropertyPathName Name="NewListCommand" />
+    <RootPropertyPathName Name="NewListName" />
     <RootPropertyPathName Name="Lists" />
     <RootPropertyPathName Name="Count" />
-    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="ListTapCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -12,54 +20,83 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="BottomAppBar" />
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="Microsoft.Practices.Prism.Mvvm.ViewModelLocator">
+      <RootMethod Name="GetAutoWireViewModel" />
+      <RootMethod Name="SetAutoWireViewModel" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Children" />
       <RootProperty Name="Background" />
       <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Children" />
       <RootProperty Name="ColumnDefinitions" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="Giftfy.MainPage" />
-    <RootType FullName="Microsoft.Practices.Prism.Mvvm.ViewModelLocator">
-      <RootMethod Name="GetAutoWireViewModel" />
-      <RootMethod Name="SetAutoWireViewModel" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Background" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Orientation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Inlines" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Inlines" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Giftfy.Views.PhotoListPage" />
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Converter" />
+      <RootProperty Name="Mode" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="PrimaryCommands" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="IsCompact" />
       <RootProperty Name="Label" />
       <RootProperty Name="Icon" />
+      <RootProperty Name="Command" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
+    <RootType FullName="Giftfy.Views.PhotoListPage" />
+    <RootType FullName="Giftfy.Converters.BooleanToVisibilityConverter" />
+    <RootType FullName="Giftfy.Converters.BooleanNegationToVisibilityConverter" />
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="Transitions" />
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Command" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -74,14 +111,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Child" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
       <RootMethod Name="GetBehaviors" />

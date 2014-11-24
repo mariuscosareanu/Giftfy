@@ -10,7 +10,20 @@
     mvvm:ViewModelLocator.AutoWireViewModel="true"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock>asdfasdf</TextBlock>
+    <Grid Background="#27ae60">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="12*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Background="#2ecc71">
+            <TextBlock Margin="10" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Text="{Binding Title}"></TextBlock>
+        </StackPanel>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="appBar">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton IsCompact="False" Label="Add" Icon="Folder" Command="{Binding OpenPicturePickerCommand}"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

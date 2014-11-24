@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Input;
+using Windows.UI.Xaml.Input;
 using Giftfy.Models;
 using Giftfy.Services;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.Mvvm.Interfaces;
 
 namespace Giftfy.ViewModels
 {
@@ -19,37 +22,88 @@ namespace Giftfy.ViewModels
         {
             this._photoListsService = new PhotoListsService();
 
-            FillWithDummy();
+            this.NewListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnNewListCommand);
+
+            this.ShowNewListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnShowNewListCommand);
+
+            this.GetLists();
         }
 
-        private IEnumerable<PhotoListViewModel> _lists;
+        //#region properties
+        private string _newListName;
 
-        public IEnumerable<PhotoListViewModel> Lists
+        public string NewListName
+        {
+            get { return this._newListName; }
+            set { SetProperty(ref _newListName, value); }
+        }
+
+        private bool _newListVisible;
+
+        public bool NewListVisible
+        {
+            get { return this._newListVisible; }
+            set { SetProperty(ref _newListVisible, value); }
+        }
+
+        private ObservableCollection<PhotoListViewModel> _lists;
+
+        public ObservableCollection<PhotoListViewModel> Lists
         {
             get { return _lists; }
-            private set { SetProperty(ref _lists, value); }
+            set { SetProperty(ref _lists, value); }
+        }
+        //#endregion
+
+        //#region commands
+        public DelegateCommand<TappedRoutedEventArgs> NewListCommand { get; set; }
+
+        private void OnNewListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            var newId = this._photoListsService.Add(new PhotoListModel
+            {
+                Name = this._newListName
+            });
+
+            var newList = this._photoListsService.Get(newId);
+
+            this.Lists.Insert(0, new PhotoListViewModel
+            {
+                Title = newList.Name,
+                Items = newList.Photos,
+                Id = newList.Id
+            });
+
+            this.NewListName = string.Empty;
+
+            this.NewListVisible = false;
         }
 
-        public void FillWithDummy()
+        public DelegateCommand<TappedRoutedEventArgs> ShowNewListCommand { get; set; }
+
+        private void OnShowNewListCommand(TappedRoutedEventArgs eventArgs)
         {
-            Lists = new List<PhotoListViewModel>
-            {
-                new PhotoListViewModel
-                {
-                    Title = "For mom",
-                    Items = new List<PhotoItemModel>{new PhotoItemModel(), new PhotoItemModel()}
-                },
-                new PhotoListViewModel()
-                {
-                    Title = "For dad",
-                    Items = new List<PhotoItemModel>{new PhotoItemModel()}
-                },
-                new PhotoListViewModel()
-                {
-                    Title = "For friends",
-                    Items = new List<PhotoItemModel>{new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel()}
-                    }
-            };
+            this.NewListVisible = true;
         }
+        //#endregion
+
+        //#region init
+        public void GetLists()
+        {
+            this.Lists = new ObservableCollection<PhotoListViewModel>();
+
+            var lists = this._photoListsService.GetAll().OrderBy(x=>x.Timestamp).Select(x => new PhotoListViewModel
+            {
+                Id = x.Id,
+                Title = x.Name,
+                Items = x.Photos
+            });
+
+            foreach (var list in lists)
+            {
+                this.Lists.Add(list);
+            }
+        }
+        //#endregion
     }
 }

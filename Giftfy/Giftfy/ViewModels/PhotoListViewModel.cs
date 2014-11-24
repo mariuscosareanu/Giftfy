@@ -14,19 +14,21 @@ using Giftfy.Models;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.Mvvm.Interfaces;
+using Microsoft.Practices.Prism.StoreApps.Interfaces;
+using Microsoft.Practices.Unity;
 using Microsoft.VisualBasic;
 
 namespace Giftfy.ViewModels
 {
     public class PhotoListViewModel : ViewModel
     {
-        private INavigationService navigationService;
+        private readonly INavigationService _navigationService;
 
         public PhotoListViewModel()
         {
             this.ListTapCommand = new DelegateCommand<TappedRoutedEventArgs>(ListTap);
 
-            this.navigationService = new FrameNavigationService(new FrameFacadeAdapter(Window.Current.Content as Frame), GetPageType, new SessionStateService());
+            this._navigationService = new FrameNavigationService(new FrameFacadeAdapter(Window.Current.Content as Frame), GetPageType, new SessionStateService());
         }
 
         protected virtual Type GetPageType(string pageToken)
@@ -46,7 +48,7 @@ namespace Giftfy.ViewModels
         public int Id
         {
             get { return this._id; }
-            private set { SetProperty(ref _id, value); }
+            set { SetProperty(ref _id, value); }
         }
 
         private IEnumerable<PhotoItemModel> _items;
@@ -59,7 +61,7 @@ namespace Giftfy.ViewModels
 
         public int Count
         {
-            get { return _items.Count(); }
+            get { return _items != null ? _items.Count() : 0; }
         }
 
         private string _title;
@@ -76,7 +78,7 @@ namespace Giftfy.ViewModels
         {
             var a = 0;
 
-            this.navigationService.Navigate("PhotoList", this.Id);
+            this._navigationService.Navigate("PhotoList", this.Id);
         }
 
     }

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -23,6 +26,8 @@ using Giftfy.Database;
 using Giftfy.Views;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.Mvvm.Interfaces;
+using Microsoft.Practices.Unity;
+using Microsoft.VisualBasic;
 using SQLite;
 
 namespace Giftfy
@@ -34,6 +39,7 @@ namespace Giftfy
     {
         private TransitionCollection transitions;
 
+        public readonly IUnityContainer _container = new UnityContainer();
 
         public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "Giftfy.sqlite"));
       
@@ -66,7 +72,9 @@ namespace Giftfy
 
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
         {
-            throw new NotImplementedException();
+            _container.RegisterInstance<INavigationService>(NavigationService);
+
+            return (Task)Task.FromResult<object>((object)null);
         }
 
         /// <summary>
@@ -77,15 +85,9 @@ namespace Giftfy
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-#if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                this.DebugSettings.EnableFrameRateCounter = true;
-            }
-#endif
-
             Frame rootFrame = Window.Current.Content as Frame;
 
+            this.InitializeFrameAsync(e);
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
@@ -160,5 +162,13 @@ namespace Giftfy
             // TODO: Save application state and stop any background activity
             deferral.Complete();
         }
+
+        protected override Task OnInitializeAsync(IActivatedEventArgs args)
+        {
+            _container.RegisterInstance<INavigationService>(NavigationService);
+
+            return (Task)Task.FromResult<object>((object)null);
+        }
+
     }
 }
