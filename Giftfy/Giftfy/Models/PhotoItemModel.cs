@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Giftfy.Models
 {
-    public class PhotoItem
+    public class PhotoItemModel
     {
         public int Id { get; set; }
     }

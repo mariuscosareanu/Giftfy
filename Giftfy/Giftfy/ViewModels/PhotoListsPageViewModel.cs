@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Input;
 using Giftfy.Models;
+using Giftfy.Services;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 
@@ -12,8 +13,12 @@ namespace Giftfy.ViewModels
 {
     public class PhotoListsPageViewModel : ViewModel
     {
+        private readonly PhotoListsService _photoListsService;
+
         public PhotoListsPageViewModel()
         {
+            this._photoListsService = new PhotoListsService();
+
             FillWithDummy();
         }
 
@@ -32,17 +37,17 @@ namespace Giftfy.ViewModels
                 new PhotoListViewModel
                 {
                     Title = "For mom",
-                    Items = new List<PhotoItem>{new PhotoItem(), new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel(), new PhotoItemModel()}
                 },
                 new PhotoListViewModel()
                 {
                     Title = "For dad",
-                    Items = new List<PhotoItem>{new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel()}
                 },
                 new PhotoListViewModel()
                 {
                     Title = "For friends",
-                    Items = new List<PhotoItem>{new PhotoItem(),new PhotoItem(),new PhotoItem(),new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel()}
                     }
             };
         }

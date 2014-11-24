@@ -24,17 +24,17 @@ namespace Giftfy.DesignViewModels
                 new PhotoListViewModel
                 {
                     Title = "For mom",
-                    Items = new List<PhotoItem>{new PhotoItem(), new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel(), new PhotoItemModel()}
                 },
                 new PhotoListViewModel()
                 {
                     Title = "For dad",
-                    Items = new List<PhotoItem>{new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel()}
                 },
                 new PhotoListViewModel()
                 {
                     Title = "For friends",
-                    Items = new List<PhotoItem>{new PhotoItem(),new PhotoItem(),new PhotoItem(),new PhotoItem()}
+                    Items = new List<PhotoItemModel>{new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel(),new PhotoItemModel()}
                     }
             };
         }

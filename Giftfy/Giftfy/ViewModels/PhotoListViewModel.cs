@@ -49,9 +49,9 @@ namespace Giftfy.ViewModels
             private set { SetProperty(ref _id, value); }
         }
 
-        private IEnumerable<PhotoItem> _items;
+        private IEnumerable<PhotoItemModel> _items;
 
-        public IEnumerable<PhotoItem> Items
+        public IEnumerable<PhotoItemModel> Items
         {
             get { return _items; }
             set { SetProperty(ref _items, value); }

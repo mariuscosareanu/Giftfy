@@ -8,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -18,9 +19,11 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
+using Giftfy.Database;
 using Giftfy.Views;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.Mvvm.Interfaces;
+using SQLite;
 
 namespace Giftfy
 {
@@ -31,16 +34,34 @@ namespace Giftfy
     {
         private TransitionCollection transitions;
 
-        public INavigationService navigationService;
 
-        /// <summary> 
-        /// Initializes the singleton application object.  This is the first line of authored code
-        /// executed, and as such is the logical equivalent of main() or WinMain().
-        /// </summary>
+        public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "Giftfy.sqlite"));
+      
         public App()
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+
+            if (!CheckFileExists("Giftfy.sqlite").Result)
+            {
+                using (var db = new SQLiteConnection(DB_PATH))
+                {
+                    db.CreateTable<PhotoLists>();
+                }
+            }
+        }
+
+        private async Task<bool> CheckFileExists(string fileName)
+        {
+            try
+            {
+                var store = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                return true;
+            }
+            catch
+            {
+            }
+            return false;
         }
 
         protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
@@ -64,8 +85,6 @@ namespace Giftfy
 #endif
 
             Frame rootFrame = Window.Current.Content as Frame;
-
-            this.navigationService = this.NavigationService;
 
 
             // Do not repeat app initialization when the Window already has content,
