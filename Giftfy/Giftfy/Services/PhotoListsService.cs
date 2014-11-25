@@ -54,11 +54,25 @@ namespace Giftfy.Services
                     Name = model.Name,
                     Timestamp = DateTime.Now
                 };
-            
+
 
             db.RunInTransaction(() => db.Insert(dbModel));
 
             return dbModel.Id;
+        }
+
+        public void Delete(int listId)
+        {
+            db.Delete<PhotoLists>(listId);
+        }
+
+        public void Update(PhotoListModel model)
+        {
+            var dbEntry = db.Get<PhotoLists>(model.Id);
+
+            dbEntry.Name = model.Name;
+
+            var item = db.Update(dbEntry);
         }
     }
 }

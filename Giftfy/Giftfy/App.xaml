@@ -1,8 +1,8 @@
-﻿<mvvm:MvvmAppBase
+﻿<local:MvvmAppBase
     x:Class="Giftfy.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Giftfy"
     xmlns:mvvm="using:Microsoft.Practices.Prism.Mvvm">
 
-</mvvm:MvvmAppBase>
+</local:MvvmAppBase>

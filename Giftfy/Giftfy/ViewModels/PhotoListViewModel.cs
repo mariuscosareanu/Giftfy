@@ -11,6 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Giftfy.Models;
+using Giftfy.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
 using Microsoft.Practices.Prism.Mvvm.Interfaces;
@@ -22,25 +23,9 @@ namespace Giftfy.ViewModels
 {
     public class PhotoListViewModel : ViewModel
     {
-        private readonly INavigationService _navigationService;
-
         public PhotoListViewModel()
         {
             this.ListTapCommand = new DelegateCommand<TappedRoutedEventArgs>(ListTap);
-
-            this._navigationService = new FrameNavigationService(new FrameFacadeAdapter(Window.Current.Content as Frame), GetPageType, new SessionStateService());
-        }
-
-        protected virtual Type GetPageType(string pageToken)
-        {
-            var assemblyQualifiedAppType = this.GetType().GetTypeInfo().AssemblyQualifiedName;
-
-            var pageNameWithParameter = assemblyQualifiedAppType.Replace(this.GetType().FullName, this.GetType().Namespace + ".Views.{0}Page");
-
-            var viewFullName = string.Format(CultureInfo.InvariantCulture, pageNameWithParameter, pageToken).Replace(".ViewModels", string.Empty);
-            var viewType = Type.GetType(viewFullName);
-
-            return viewType;
         }
 
         private int _id;
@@ -76,10 +61,7 @@ namespace Giftfy.ViewModels
 
         private void ListTap(TappedRoutedEventArgs eventArgs)
         {
-            var a = 0;
-
-            this._navigationService.Navigate("PhotoList", this.Id);
+            (App.Current as App).NavigationService.Navigate("PhotoList", this.Id);
         }
-
     }
 }

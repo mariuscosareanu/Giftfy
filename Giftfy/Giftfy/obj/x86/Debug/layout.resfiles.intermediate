@@ -8,3 +8,5 @@ App.xbf
 Giftfy.xr.xml
 Views\PhotoListPage.xbf
 Views\PhotoListsPage.xbf
+Lib\Microsoft.Practices.Unity.NetCore.dll
+Lib\Microsoft.Practices.Unity.NetCore.xml

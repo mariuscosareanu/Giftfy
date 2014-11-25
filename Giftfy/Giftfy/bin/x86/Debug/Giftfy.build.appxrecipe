@@ -43,6 +43,9 @@
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\packages\Prism.StoreApps.2.0.0\lib\wpa81\Microsoft.Practices.Prism.StoreApps.Phone.dll">
       <PackagePath>Microsoft.Practices.Prism.StoreApps.Phone.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Lib\Microsoft.Practices.Unity.NetCore.dll">
+      <PackagePath>Microsoft.Practices.Unity.NetCore.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
@@ -72,6 +75,12 @@
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Lib\Microsoft.Practices.Unity.NetCore.dll">
+      <PackagePath>Lib\Microsoft.Practices.Unity.NetCore.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Lib\Microsoft.Practices.Unity.NetCore.xml">
+      <PackagePath>Lib\Microsoft.Practices.Unity.NetCore.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>

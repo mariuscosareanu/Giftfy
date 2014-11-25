@@ -1,4 +1,4 @@
-﻿<Page
+﻿<storeApps:VisualStateAwarePage
     x:Class="Giftfy.Views.PhotoListsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -9,22 +9,24 @@
     xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:core="using:Microsoft.Xaml.Interactions.Core"
     xmlns:converters="using:Giftfy.Converters"
+    xmlns:storeApps="using:Microsoft.Practices.Prism.StoreApps"
+    xmlns:giftfy="using:Giftfy"
     mc:Ignorable="d"
     mvvm:ViewModelLocator.AutoWireViewModel="true"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
+    <storeApps:VisualStateAwarePage.Resources>
         <converters:BooleanToVisibilityConverter x:Key="BoolToVis" />
         <converters:BooleanNegationToVisibilityConverter x:Key="NotBoolToVis" />
-    </Page.Resources>
-    
-    <Page.BottomAppBar>
+    </storeApps:VisualStateAwarePage.Resources>
+
+    <storeApps:VisualStateAwarePage.BottomAppBar>
         <CommandBar x:Name="appBar" Visibility="{Binding NewListVisible, Converter={StaticResource NotBoolToVis}}">
             <CommandBar.PrimaryCommands>
                 <AppBarButton IsCompact="False" Label="New list" Icon="Add" Command="{Binding ShowNewListCommand}"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
-    </Page.BottomAppBar>
+    </storeApps:VisualStateAwarePage.BottomAppBar>
 
     <Grid Background="#34495e">
         <Grid.RowDefinitions>
@@ -83,9 +85,15 @@
         </GridView>
         <StackPanel Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" Margin="0,100,0,0" HorizontalAlignment="Center" Grid.Row="1">
             <TextBlock FontSize="20">Choose name</TextBlock>
-            <TextBox Text="{Binding NewListName, Mode=TwoWay}"></TextBox>
-            <Button Command="{Binding NewListCommand}">Add</Button>
+            <TextBox MinWidth="200" Text="{Binding NewListName, Mode=TwoWay}">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="KeyUp">
+                        <core:InvokeCommandAction Command="{Binding KeyUpNewList}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </TextBox>
+            <Button Width="200" Command="{Binding NewListCommand}">Add</Button>
         </StackPanel>
     </Grid>
 
-</Page>
+</storeApps:VisualStateAwarePage>

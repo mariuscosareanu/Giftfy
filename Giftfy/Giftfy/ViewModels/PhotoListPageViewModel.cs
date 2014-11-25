@@ -26,7 +26,15 @@ namespace Giftfy.ViewModels
 
             _photoListsService = new PhotoListsService();
 
-            this.OpenPicturePickerCommand = new DelegateCommand<TappedRoutedEventArgs>(OnOpenPicturePickerCOmmand);
+            this.OpenPicturePickerCommand = new DelegateCommand<TappedRoutedEventArgs>(OnOpenPicturePickerCommand);
+
+            this.DeleteListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnDeleteListCommand);
+
+            this.EditListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnShowEditListCommand);
+
+            this.CancelEditListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnCancelEditListCommand);
+
+            this.SaveEditListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnSaveEditListCommand);
         }
 
         //#region properties
@@ -53,12 +61,28 @@ namespace Giftfy.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
+
+        private bool _showEditList;
+
+        public bool ShowEditList
+        {
+            get { return _showEditList; }
+            set { SetProperty(ref _showEditList, value); }
+        }
+
+        private string _titleEdit;
+
+        public string TitleEdit
+        {
+            get { return this._title; }
+            set { SetProperty(ref _titleEdit, value); }
+        }
         //#endregion
 
         //#region commands
         public DelegateCommand<TappedRoutedEventArgs> OpenPicturePickerCommand { get; set; }
 
-        private async void OnOpenPicturePickerCOmmand(TappedRoutedEventArgs eventArgs)
+        private async void OnOpenPicturePickerCommand(TappedRoutedEventArgs eventArgs)
         {
             var openPicker = new FileOpenPicker
             {
@@ -73,12 +97,50 @@ namespace Giftfy.ViewModels
             openPicker.FileTypeFilter.Add(".jpg");
 
             openPicker.PickSingleFileAndContinue();
+        }
 
-            var a = 1;
+        public DelegateCommand<TappedRoutedEventArgs> DeleteListCommand { get; set; }
+
+        private async void OnDeleteListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            this._photoListsService.Delete(this.Id);
+
+            (App.Current as App).NavigationService.Navigate("PhotoLists", null);
+        }
+
+        public DelegateCommand<TappedRoutedEventArgs> EditListCommand { get; set; }
+
+        private async void OnShowEditListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            this.ShowEditList = true;
+        }
+
+        public DelegateCommand<TappedRoutedEventArgs> SaveEditListCommand { get; set; }
+
+        private async void OnSaveEditListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            this._photoListsService.Update(new PhotoListModel
+            {
+                Id = this.Id,
+                Name = this._titleEdit
+            });
+
+            this.Title = this._titleEdit;
+
+            this.ShowEditList = false;
+        }
+
+        public DelegateCommand<TappedRoutedEventArgs> CancelEditListCommand { get; set; }
+
+        private async void OnCancelEditListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            this.ShowEditList = false;
+
+            this._titleEdit = this.Title;
         }
         //#endregion
 
-        //#region init
+        #region init
         public async override void OnNavigatedTo(object navigationParameter, NavigationMode navigationMode, Dictionary<string, object> viewModelState)
         {
             base.OnNavigatedTo(navigationParameter, navigationMode, viewModelState);
@@ -90,7 +152,7 @@ namespace Giftfy.ViewModels
             this.Id = list.Id;
             this.Title = list.Name;
         }
-        //#endregion
+        #endregion
 
     }
 }

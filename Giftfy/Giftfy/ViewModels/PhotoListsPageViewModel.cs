@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.System;
 using Windows.UI.Input;
 using Windows.UI.Xaml.Input;
 using Giftfy.Models;
@@ -25,6 +26,8 @@ namespace Giftfy.ViewModels
             this.NewListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnNewListCommand);
 
             this.ShowNewListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnShowNewListCommand);
+
+            this.KeyUpNewList = new DelegateCommand<KeyRoutedEventArgs>(OnKeyUpNewList);
 
             this.GetLists();
         }
@@ -85,6 +88,16 @@ namespace Giftfy.ViewModels
         {
             this.NewListVisible = true;
         }
+
+        public DelegateCommand<KeyRoutedEventArgs> KeyUpNewList { get; set; }
+
+        private void OnKeyUpNewList(KeyRoutedEventArgs eventArgs)
+        {
+            if (eventArgs.Key == VirtualKey.Enter)
+            {
+                this.OnNewListCommand(null);
+            }
+        }
         //#endregion
 
         //#region init
@@ -92,7 +105,7 @@ namespace Giftfy.ViewModels
         {
             this.Lists = new ObservableCollection<PhotoListViewModel>();
 
-            var lists = this._photoListsService.GetAll().OrderBy(x=>x.Timestamp).Select(x => new PhotoListViewModel
+            var lists = this._photoListsService.GetAll().OrderBy(x => x.Timestamp).Select(x => new PhotoListViewModel
             {
                 Id = x.Id,
                 Title = x.Name,

@@ -4,29 +4,38 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="ShowEditList" />
+    <RootPropertyPathName Name="TitleEdit" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="SaveEditListCommand" />
+    <RootPropertyPathName Name="CancelEditListCommand" />
+    <RootPropertyPathName Name="EditListCommand" />
+    <RootPropertyPathName Name="DeleteListCommand" />
     <RootPropertyPathName Name="OpenPicturePickerCommand" />
     <RootPropertyPathName Name="NewListVisible" />
     <RootPropertyPathName Name="ShowNewListCommand" />
     <RootPropertyPathName Name="NewListCommand" />
     <RootPropertyPathName Name="NewListName" />
+    <RootPropertyPathName Name="KeyUpNewList" />
     <RootPropertyPathName Name="Lists" />
     <RootPropertyPathName Name="Count" />
     <RootPropertyPathName Name="ListTapCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
-    <RootType FullName="Microsoft.Practices.Prism.Mvvm.MvvmAppBase" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+    <RootType FullName="Giftfy.MvvmAppBase" />
+    <RootType FullName="Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage">
       <RootProperty Name="Background" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
       <RootProperty Name="BottomAppBar" />
-      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Practices.Prism.Mvvm.ViewModelLocator">
       <RootMethod Name="GetAutoWireViewModel" />
       <RootMethod Name="SetAutoWireViewModel" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Giftfy.Converters.BooleanToVisibilityConverter" />
+    <RootType FullName="Giftfy.Converters.BooleanNegationToVisibilityConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
       <RootProperty Name="RowDefinitions" />
@@ -50,6 +59,7 @@
       <RootProperty Name="Orientation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Visibility" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontSize" />
@@ -59,24 +69,31 @@
       <RootProperty Name="Inlines" />
       <RootProperty Name="TextWrapping" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="MinWidth" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="Converter" />
       <RootProperty Name="Mode" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="PrimaryCommands" />
       <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Visibility" />
       <RootProperty Name="IsCompact" />
       <RootProperty Name="Label" />
       <RootProperty Name="Icon" />
       <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Giftfy.Views.PhotoListPage" />
-    <RootType FullName="Giftfy.Converters.BooleanToVisibilityConverter" />
-    <RootType FullName="Giftfy.Converters.BooleanNegationToVisibilityConverter" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -88,12 +105,21 @@
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Text" />
+    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
+      <RootMethod Name="GetBehaviors" />
+      <RootMethod Name="SetBehaviors" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Width" />
       <RootProperty Name="Command" />
       <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+      <RootProperty Name="EventName" />
+      <RootProperty Name="Actions" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+      <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
@@ -111,17 +137,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Child" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="EventName" />
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
-      <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Giftfy.Views.PhotoListsPage" />
   </Roots.RootTypes>

@@ -124,51 +124,61 @@ namespace Giftfy.Giftfy_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[21];
-            _typeNameTable[0] = "Microsoft.Practices.Prism.Mvvm.MvvmAppBase";
+            _typeNameTable = new string[26];
+            _typeNameTable[0] = "Giftfy.MvvmAppBase";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
-            _typeNameTable[2] = "Boolean";
-            _typeNameTable[3] = "Microsoft.Practices.Prism.Mvvm.ViewModelLocator";
-            _typeNameTable[4] = "Object";
-            _typeNameTable[5] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[6] = "Giftfy.Views.PhotoListPage";
-            _typeNameTable[7] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[9] = "Giftfy.Converters.BooleanToVisibilityConverter";
-            _typeNameTable[10] = "Giftfy.Converters.BooleanNegationToVisibilityConverter";
-            _typeNameTable[11] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[12] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[13] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[14] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[16] = "String";
-            _typeNameTable[17] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[18] = "System.Windows.Input.ICommand";
-            _typeNameTable[19] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[20] = "Giftfy.Views.PhotoListsPage";
+            _typeNameTable[2] = "Microsoft.Practices.Prism.Mvvm.Interfaces.INavigationService";
+            _typeNameTable[3] = "Boolean";
+            _typeNameTable[4] = "Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage";
+            _typeNameTable[5] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[7] = "Int32";
+            _typeNameTable[8] = "Microsoft.Practices.Prism.Commands.DelegateCommand";
+            _typeNameTable[9] = "Microsoft.Practices.Prism.Commands.DelegateCommandBase";
+            _typeNameTable[10] = "Object";
+            _typeNameTable[11] = "Microsoft.Practices.Prism.Mvvm.ViewModelLocator";
+            _typeNameTable[12] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[13] = "Giftfy.Converters.BooleanToVisibilityConverter";
+            _typeNameTable[14] = "Giftfy.Converters.BooleanNegationToVisibilityConverter";
+            _typeNameTable[15] = "Giftfy.Views.PhotoListPage";
+            _typeNameTable[16] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[18] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[19] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[20] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[21] = "String";
+            _typeNameTable[22] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[23] = "System.Windows.Input.ICommand";
+            _typeNameTable[24] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[25] = "Giftfy.Views.PhotoListsPage";
 
-            _typeTable = new global::System.Type[21];
-            _typeTable[0] = typeof(global::Microsoft.Practices.Prism.Mvvm.MvvmAppBase);
+            _typeTable = new global::System.Type[26];
+            _typeTable[0] = typeof(global::Giftfy.MvvmAppBase);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
-            _typeTable[2] = typeof(global::System.Boolean);
-            _typeTable[3] = typeof(global::Microsoft.Practices.Prism.Mvvm.ViewModelLocator);
-            _typeTable[4] = typeof(global::System.Object);
-            _typeTable[5] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[6] = typeof(global::Giftfy.Views.PhotoListPage);
-            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[9] = typeof(global::Giftfy.Converters.BooleanToVisibilityConverter);
-            _typeTable[10] = typeof(global::Giftfy.Converters.BooleanNegationToVisibilityConverter);
-            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[12] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[16] = typeof(global::System.String);
-            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[18] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[19] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[20] = typeof(global::Giftfy.Views.PhotoListsPage);
+            _typeTable[2] = typeof(global::Microsoft.Practices.Prism.Mvvm.Interfaces.INavigationService);
+            _typeTable[3] = typeof(global::System.Boolean);
+            _typeTable[4] = typeof(global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[7] = typeof(global::System.Int32);
+            _typeTable[8] = typeof(global::Microsoft.Practices.Prism.Commands.DelegateCommand);
+            _typeTable[9] = typeof(global::Microsoft.Practices.Prism.Commands.DelegateCommandBase);
+            _typeTable[10] = typeof(global::System.Object);
+            _typeTable[11] = typeof(global::Microsoft.Practices.Prism.Mvvm.ViewModelLocator);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[13] = typeof(global::Giftfy.Converters.BooleanToVisibilityConverter);
+            _typeTable[14] = typeof(global::Giftfy.Converters.BooleanNegationToVisibilityConverter);
+            _typeTable[15] = typeof(global::Giftfy.Views.PhotoListPage);
+            _typeTable[16] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[18] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[19] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[20] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[21] = typeof(global::System.String);
+            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[23] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[24] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[25] = typeof(global::Giftfy.Views.PhotoListsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -203,21 +213,22 @@ namespace Giftfy.Giftfy_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_6_PhotoListPage() { return new global::Giftfy.Views.PhotoListPage(); }
-        private object Activate_9_BooleanToVisibilityConverter() { return new global::Giftfy.Converters.BooleanToVisibilityConverter(); }
-        private object Activate_10_BooleanNegationToVisibilityConverter() { return new global::Giftfy.Converters.BooleanNegationToVisibilityConverter(); }
-        private object Activate_12_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_14_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_15_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_17_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_20_PhotoListsPage() { return new global::Giftfy.Views.PhotoListsPage(); }
-        private void VectorAdd_12_BehaviorCollection(object instance, object item)
+        private object Activate_4_VisualStateAwarePage() { return new global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage(); }
+        private object Activate_13_BooleanToVisibilityConverter() { return new global::Giftfy.Converters.BooleanToVisibilityConverter(); }
+        private object Activate_14_BooleanNegationToVisibilityConverter() { return new global::Giftfy.Converters.BooleanNegationToVisibilityConverter(); }
+        private object Activate_15_PhotoListPage() { return new global::Giftfy.Views.PhotoListPage(); }
+        private object Activate_17_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_19_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_20_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_22_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_25_PhotoListsPage() { return new global::Giftfy.Views.PhotoListsPage(); }
+        private void VectorAdd_17_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_15_ActionCollection(object instance, object item)
+        private void VectorAdd_20_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -234,9 +245,11 @@ namespace Giftfy.Giftfy_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Microsoft.Practices.Prism.Mvvm.MvvmAppBase
+            case 0:   //  Giftfy.MvvmAppBase
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Application"));
+                userType.AddMemberName("NavigationService");
                 userType.AddMemberName("IsSuspending");
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
@@ -244,73 +257,102 @@ namespace Giftfy.Giftfy_XamlTypeInfo
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  Boolean
+            case 2:   //  Microsoft.Practices.Prism.Mvvm.Interfaces.INavigationService
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 3:   //  Boolean
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Microsoft.Practices.Prism.Mvvm.ViewModelLocator
+            case 4:   //  Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_VisualStateAwarePage;
+                userType.AddMemberName("MinimalLayoutWidth");
+                userType.AddMemberName("GoBackCommand");
+                xamlType = userType;
+                break;
+
+            case 5:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 6:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Int32
+                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Microsoft.Practices.Prism.Commands.DelegateCommand
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Practices.Prism.Commands.DelegateCommandBase"));
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Microsoft.Practices.Prism.Commands.DelegateCommandBase
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                xamlType = userType;
+                break;
+
+            case 10:   //  Object
+                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  Microsoft.Practices.Prism.Mvvm.ViewModelLocator
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("AutoWireViewModel");
                 xamlType = userType;
                 break;
 
-            case 4:   //  Object
+            case 12:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  Windows.UI.Xaml.DependencyObject
-                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 6:   //  Giftfy.Views.PhotoListPage
-                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_PhotoListPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 7:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 8:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 9:   //  Giftfy.Converters.BooleanToVisibilityConverter
+            case 13:   //  Giftfy.Converters.BooleanToVisibilityConverter
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_BooleanToVisibilityConverter;
+                userType.Activator = Activate_13_BooleanToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Giftfy.Converters.BooleanNegationToVisibilityConverter
+            case 14:   //  Giftfy.Converters.BooleanNegationToVisibilityConverter
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_10_BooleanNegationToVisibilityConverter;
+                userType.Activator = Activate_14_BooleanNegationToVisibilityConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 15:   //  Giftfy.Views.PhotoListPage
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage"));
+                userType.Activator = Activate_15_PhotoListPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 12:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 17:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_12_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_17_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 13:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 18:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 19:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_14_EventTriggerBehavior;
+                userType.Activator = Activate_19_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -319,20 +361,20 @@ namespace Giftfy.Giftfy_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 20:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_15_ActionCollection;
+                userType.CollectionAdd = VectorAdd_20_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 16:   //  String
+            case 21:   //  String
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 17:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 22:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_17_InvokeCommandAction;
+                userType.Activator = Activate_22_InvokeCommandAction;
                 userType.AddMemberName("Command");
                 userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverter");
@@ -341,19 +383,19 @@ namespace Giftfy.Giftfy_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 18:   //  System.Windows.Input.ICommand
+            case 23:   //  System.Windows.Input.ICommand
                 userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 19:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 24:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Giftfy.Views.PhotoListsPage
-                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_PhotoListsPage;
+            case 25:   //  Giftfy.Views.PhotoListsPage
+                userType = new global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage"));
+                userType.Activator = Activate_25_PhotoListsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -362,103 +404,133 @@ namespace Giftfy.Giftfy_XamlTypeInfo
         }
 
 
-        private object get_0_MvvmAppBase_IsSuspending(object instance)
+        private object get_0_MvvmAppBase_NavigationService(object instance)
         {
-            var that = (global::Microsoft.Practices.Prism.Mvvm.MvvmAppBase)instance;
+            var that = (global::Giftfy.MvvmAppBase)instance;
+            return that.NavigationService;
+        }
+        private void set_0_MvvmAppBase_NavigationService(object instance, object Value)
+        {
+            var that = (global::Giftfy.MvvmAppBase)instance;
+            that.NavigationService = (global::Microsoft.Practices.Prism.Mvvm.Interfaces.INavigationService)Value;
+        }
+        private object get_1_MvvmAppBase_IsSuspending(object instance)
+        {
+            var that = (global::Giftfy.MvvmAppBase)instance;
             return that.IsSuspending;
         }
-        private object get_1_ViewModelLocator_AutoWireViewModel(object instance)
+        private object get_2_VisualStateAwarePage_MinimalLayoutWidth(object instance)
+        {
+            var that = (global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage)instance;
+            return that.MinimalLayoutWidth;
+        }
+        private void set_2_VisualStateAwarePage_MinimalLayoutWidth(object instance, object Value)
+        {
+            var that = (global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage)instance;
+            that.MinimalLayoutWidth = (global::System.Int32)Value;
+        }
+        private object get_3_VisualStateAwarePage_GoBackCommand(object instance)
+        {
+            var that = (global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage)instance;
+            return that.GoBackCommand;
+        }
+        private void set_3_VisualStateAwarePage_GoBackCommand(object instance, object Value)
+        {
+            var that = (global::Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage)instance;
+            that.GoBackCommand = (global::Microsoft.Practices.Prism.Commands.DelegateCommand)Value;
+        }
+        private object get_4_ViewModelLocator_AutoWireViewModel(object instance)
         {
             return global::Microsoft.Practices.Prism.Mvvm.ViewModelLocator.GetAutoWireViewModel((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_1_ViewModelLocator_AutoWireViewModel(object instance, object Value)
+        private void set_4_ViewModelLocator_AutoWireViewModel(object instance, object Value)
         {
             global::Microsoft.Practices.Prism.Mvvm.ViewModelLocator.SetAutoWireViewModel((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
         }
-        private object get_2_Interaction_Behaviors(object instance)
+        private object get_5_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_2_Interaction_Behaviors(object instance, object Value)
+        private void set_5_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_3_EventTriggerBehavior_Actions(object instance)
+        private object get_6_EventTriggerBehavior_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.Actions;
         }
-        private object get_4_EventTriggerBehavior_EventName(object instance)
+        private object get_7_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_4_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_7_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_5_EventTriggerBehavior_SourceObject(object instance)
+        private object get_8_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_5_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_8_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_6_EventTriggerBehavior_AssociatedObject(object instance)
+        private object get_9_EventTriggerBehavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_7_InvokeCommandAction_Command(object instance)
+        private object get_10_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_7_InvokeCommandAction_Command(object instance, object Value)
+        private void set_10_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_8_InvokeCommandAction_CommandParameter(object instance)
+        private object get_11_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_8_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_11_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_9_InvokeCommandAction_InputConverter(object instance)
+        private object get_12_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_9_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_12_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_10_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_13_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_10_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_13_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_11_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_14_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_11_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_14_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
@@ -471,89 +543,107 @@ namespace Giftfy.Giftfy_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "Microsoft.Practices.Prism.Mvvm.MvvmAppBase.IsSuspending":
-                userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Practices.Prism.Mvvm.MvvmAppBase");
+            case "Giftfy.MvvmAppBase.NavigationService":
+                userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Giftfy.MvvmAppBase");
+                xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "NavigationService", "Microsoft.Practices.Prism.Mvvm.Interfaces.INavigationService");
+                xamlMember.Getter = get_0_MvvmAppBase_NavigationService;
+                xamlMember.Setter = set_0_MvvmAppBase_NavigationService;
+                break;
+            case "Giftfy.MvvmAppBase.IsSuspending":
+                userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Giftfy.MvvmAppBase");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "IsSuspending", "Boolean");
-                xamlMember.Getter = get_0_MvvmAppBase_IsSuspending;
+                xamlMember.Getter = get_1_MvvmAppBase_IsSuspending;
                 xamlMember.SetIsReadOnly();
+                break;
+            case "Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage.MinimalLayoutWidth":
+                userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage");
+                xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "MinimalLayoutWidth", "Int32");
+                xamlMember.Getter = get_2_VisualStateAwarePage_MinimalLayoutWidth;
+                xamlMember.Setter = set_2_VisualStateAwarePage_MinimalLayoutWidth;
+                break;
+            case "Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage.GoBackCommand":
+                userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Practices.Prism.StoreApps.VisualStateAwarePage");
+                xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "GoBackCommand", "Microsoft.Practices.Prism.Commands.DelegateCommand");
+                xamlMember.Getter = get_3_VisualStateAwarePage_GoBackCommand;
+                xamlMember.Setter = set_3_VisualStateAwarePage_GoBackCommand;
                 break;
             case "Microsoft.Practices.Prism.Mvvm.ViewModelLocator.AutoWireViewModel":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Practices.Prism.Mvvm.ViewModelLocator");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "AutoWireViewModel", "Boolean");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_1_ViewModelLocator_AutoWireViewModel;
-                xamlMember.Setter = set_1_ViewModelLocator_AutoWireViewModel;
+                xamlMember.Getter = get_4_ViewModelLocator_AutoWireViewModel;
+                xamlMember.Setter = set_4_ViewModelLocator_AutoWireViewModel;
                 break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_2_Interaction_Behaviors;
-                xamlMember.Setter = set_2_Interaction_Behaviors;
+                xamlMember.Getter = get_5_Interaction_Behaviors;
+                xamlMember.Setter = set_5_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_3_EventTriggerBehavior_Actions;
+                xamlMember.Getter = get_6_EventTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_4_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_7_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_7_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_5_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_8_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_8_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_6_EventTriggerBehavior_AssociatedObject;
+                xamlMember.Getter = get_9_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_InvokeCommandAction_Command;
-                xamlMember.Setter = set_7_InvokeCommandAction_Command;
+                xamlMember.Getter = get_10_InvokeCommandAction_Command;
+                xamlMember.Setter = set_10_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_8_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_11_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_11_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_9_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_12_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_12_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_10_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_13_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_13_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::Giftfy.Giftfy_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Giftfy.Giftfy_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_11_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_14_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_14_InvokeCommandAction_InputConverterLanguage;
                 break;
             }
             return xamlMember;

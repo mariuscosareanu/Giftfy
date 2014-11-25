@@ -42,7 +42,7 @@ namespace Giftfy
         public readonly IUnityContainer _container = new UnityContainer();
 
         public static string DB_PATH = Path.Combine(Path.Combine(ApplicationData.Current.LocalFolder.Path, "Giftfy.sqlite"));
-      
+
         public App()
         {
             this.InitializeComponent();
@@ -70,11 +70,9 @@ namespace Giftfy
             return false;
         }
 
-        protected override Task OnLaunchApplicationAsync(LaunchActivatedEventArgs args)
+        protected override Task OnLaunchApplication(LaunchActivatedEventArgs args)
         {
-            _container.RegisterInstance<INavigationService>(NavigationService);
-
-            return (Task)Task.FromResult<object>((object)null);
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -85,54 +83,64 @@ namespace Giftfy
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            Frame rootFrame = Window.Current.Content as Frame;
+            //Frame rootFrame = Window.Current.Content as Frame;
 
             this.InitializeFrameAsync(e);
 
-            // Do not repeat app initialization when the Window already has content,
-            // just ensure that the window is active
-            if (rootFrame == null)
-            {
-                // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame();
+            //// Do not repeat app initialization when the Window already has content,
+            //// just ensure that the window is active
+            //if (rootFrame == null)
+            //{
+            //    // Create a Frame to act as the navigation context and navigate to the first page
+            //    rootFrame = new Frame();
 
-                // TODO: change this value to a cache size that is appropriate for your application
-                rootFrame.CacheSize = 1;
+            //    // TODO: change this value to a cache size that is appropriate for your application
+            //    rootFrame.CacheSize = 1;
 
-                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
-                {
-                    // TODO: Load state from previously suspended application
-                }
+            //    if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+            //    {
+            //        // TODO: Load state from previously suspended application
+            //    }
 
-                // Place the frame in the current Window
-                Window.Current.Content = rootFrame;
-            }
+            //    // Place the frame in the current Window
+            //    Window.Current.Content = rootFrame;
+            //}
 
-            if (rootFrame.Content == null)
-            {
-                // Removes the turnstile navigation for startup.
-                if (rootFrame.ContentTransitions != null)
-                {
-                    this.transitions = new TransitionCollection();
-                    foreach (var c in rootFrame.ContentTransitions)
-                    {
-                        this.transitions.Add(c);
-                    }
-                }
+            //if (rootFrame.Content == null)
+            //{
+            //    // Removes the turnstile navigation for startup.
+            //    if (rootFrame.ContentTransitions != null)
+            //    {
+            //        this.transitions = new TransitionCollection();
+            //        foreach (var c in rootFrame.ContentTransitions)
+            //        {
+            //            this.transitions.Add(c);
+            //        }
+            //    }
 
-                rootFrame.ContentTransitions = null;
-                rootFrame.Navigated += this.RootFrame_FirstNavigated;
+            //    rootFrame.ContentTransitions = null;
+            //    rootFrame.Navigated += this.RootFrame_FirstNavigated;
 
-                // When the navigation stack isn't restored navigate to the first page,
-                // configuring the new page by passing required information as a navigation
-                // parameter
-                if (!rootFrame.Navigate(typeof(PhotoListsPage), e.Arguments))
-                {
-                    throw new Exception("Failed to create initial page");
-                }
-            }
+            //    // When the navigation stack isn't restored navigate to the first page,
+            //    // configuring the new page by passing required information as a navigation
+            //    // parameter
+            //    //if (!rootFrame.Navigate(typeof(PhotoListsPage), e.Arguments))
+            //    //{
+            //    //    throw new Exception("Failed to create initial page");
+            //    //}
 
-            // Ensure the current window is active
+            //    var works = this.NavigationService.Navigate("PhotoLists", string.Empty);
+
+            //}
+
+
+            //// Ensure the current window is active
+            //Window.Current.Activate();
+
+
+            // Navigate to the initial page
+            NavigationService.Navigate("PhotoLists", null);
+
             Window.Current.Activate();
         }
 
@@ -163,11 +171,9 @@ namespace Giftfy
             deferral.Complete();
         }
 
-        protected override Task OnInitializeAsync(IActivatedEventArgs args)
+        protected override void OnInitialize(IActivatedEventArgs args)
         {
-            _container.RegisterInstance<INavigationService>(NavigationService);
-
-            return (Task)Task.FromResult<object>((object)null);
+            _container.RegisterType<INavigationService, MyFrameNavigationService>();
         }
 
     }

@@ -16,21 +16,20 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 using Microsoft.Practices.Prism.Mvvm;
+using Microsoft.Practices.Prism.StoreApps;
 
 namespace Giftfy.Views
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PhotoListsPage : Page, IView
+    public sealed partial class PhotoListsPage : VisualStateAwarePage
     {
         public PhotoListsPage()
         {
             this.InitializeComponent();
 
-            ApplicationView.GetForCurrentView().
-
-            SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
+            ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
         }
 
         /// <summary>
@@ -41,6 +40,10 @@ namespace Giftfy.Views
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             await Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
         }
     }
 }
