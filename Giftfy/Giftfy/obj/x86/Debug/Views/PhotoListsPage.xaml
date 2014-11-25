@@ -85,8 +85,14 @@
         </GridView>
         <StackPanel Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" Margin="0,100,0,0" HorizontalAlignment="Center" Grid.Row="1">
             <TextBlock FontSize="20">Choose name</TextBlock>
-            <TextBox Text="{Binding NewListName, Mode=TwoWay}"></TextBox>
-            <Button Command="{Binding NewListCommand}">Add</Button>
+            <TextBox MinWidth="200" Text="{Binding NewListName, Mode=TwoWay}">
+                <interactivity:Interaction.Behaviors>
+                    <core:EventTriggerBehavior EventName="KeyUp">
+                        <core:InvokeCommandAction Command="{Binding KeyUpNewList}" />
+                    </core:EventTriggerBehavior>
+                </interactivity:Interaction.Behaviors>
+            </TextBox>
+            <Button Width="200" Command="{Binding NewListCommand}">Add</Button>
         </StackPanel>
     </Grid>
 

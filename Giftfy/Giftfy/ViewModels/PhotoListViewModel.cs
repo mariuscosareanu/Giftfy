@@ -1,23 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.ApplicationModel.Resources;
-using Windows.UI.Input;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Giftfy.Models;
-using Giftfy.Views;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.Mvvm.Interfaces;
-using Microsoft.Practices.Prism.StoreApps.Interfaces;
-using Microsoft.Practices.Unity;
-using Microsoft.VisualBasic;
 
 namespace Giftfy.ViewModels
 {
@@ -28,6 +14,7 @@ namespace Giftfy.ViewModels
             this.ListTapCommand = new DelegateCommand<TappedRoutedEventArgs>(ListTap);
         }
 
+        #region Properties
         private int _id;
 
         public int Id
@@ -56,12 +43,15 @@ namespace Giftfy.ViewModels
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
+        #endregion
 
+        #region Commands
         public DelegateCommand<TappedRoutedEventArgs> ListTapCommand { get; set; }
 
         private void ListTap(TappedRoutedEventArgs eventArgs)
         {
             (App.Current as App).NavigationService.Navigate("PhotoList", this.Id);
         }
+        #endregion
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Windows.Storage;
+﻿using System.Collections.Generic;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Navigation;
@@ -16,14 +11,10 @@ namespace Giftfy.ViewModels
 {
     public class PhotoListPageViewModel : ViewModel
     {
-        private readonly PhotosService _photosService;
-
         private readonly PhotoListsService _photoListsService;
 
         public PhotoListPageViewModel()
         {
-            _photosService = new PhotosService();
-
             _photoListsService = new PhotoListsService();
 
             this.OpenPicturePickerCommand = new DelegateCommand<TappedRoutedEventArgs>(OnOpenPicturePickerCommand);
@@ -35,9 +26,11 @@ namespace Giftfy.ViewModels
             this.CancelEditListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnCancelEditListCommand);
 
             this.SaveEditListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnSaveEditListCommand);
+
+            this.BackToStartCommand = new DelegateCommand<TappedRoutedEventArgs>(OnBackToStartCommand);
         }
 
-        //#region properties
+        #region Properties
         private int _id;
 
         public int Id
@@ -77,9 +70,9 @@ namespace Giftfy.ViewModels
             get { return this._title; }
             set { SetProperty(ref _titleEdit, value); }
         }
-        //#endregion
+        #endregion
 
-        //#region commands
+        #region Commands
         public DelegateCommand<TappedRoutedEventArgs> OpenPicturePickerCommand { get; set; }
 
         private async void OnOpenPicturePickerCommand(TappedRoutedEventArgs eventArgs)
@@ -117,7 +110,7 @@ namespace Giftfy.ViewModels
 
         public DelegateCommand<TappedRoutedEventArgs> SaveEditListCommand { get; set; }
 
-        private async void OnSaveEditListCommand(TappedRoutedEventArgs eventArgs)
+        private void OnSaveEditListCommand(TappedRoutedEventArgs eventArgs)
         {
             this._photoListsService.Update(new PhotoListModel
             {
@@ -132,16 +125,23 @@ namespace Giftfy.ViewModels
 
         public DelegateCommand<TappedRoutedEventArgs> CancelEditListCommand { get; set; }
 
-        private async void OnCancelEditListCommand(TappedRoutedEventArgs eventArgs)
+        private void OnCancelEditListCommand(TappedRoutedEventArgs eventArgs)
         {
             this.ShowEditList = false;
 
             this._titleEdit = this.Title;
         }
-        //#endregion
 
-        #region init
-        public async override void OnNavigatedTo(object navigationParameter, NavigationMode navigationMode, Dictionary<string, object> viewModelState)
+        public DelegateCommand<TappedRoutedEventArgs> BackToStartCommand { get; set; }
+
+        private void OnBackToStartCommand(TappedRoutedEventArgs eventArgs)
+        {
+            (App.Current as App).NavigationService.Navigate("PhotoLists", null);
+        }
+        #endregion
+
+        #region Init
+        public override void OnNavigatedTo(object navigationParameter, NavigationMode navigationMode, Dictionary<string, object> viewModelState)
         {
             base.OnNavigatedTo(navigationParameter, navigationMode, viewModelState);
 

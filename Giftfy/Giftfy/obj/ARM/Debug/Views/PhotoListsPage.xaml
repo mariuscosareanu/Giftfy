@@ -21,9 +21,10 @@
     </storeApps:VisualStateAwarePage.Resources>
 
     <storeApps:VisualStateAwarePage.BottomAppBar>
-        <CommandBar x:Name="appBar" Visibility="{Binding NewListVisible, Converter={StaticResource NotBoolToVis}}">
+        <CommandBar x:Name="appBar" >
             <CommandBar.PrimaryCommands>
-                <AppBarButton IsCompact="False" Label="New list" Icon="Add" Command="{Binding ShowNewListCommand}"/>
+                <AppBarButton IsCompact="False" Label="New list" Icon="Add" Command="{Binding ShowNewListCommand}" Visibility="{Binding NewListVisible, Converter={StaticResource NotBoolToVis}}"/>
+                <AppBarButton Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" IsCompact="False" Label="Cancel" Command="{Binding CancelNewListCommand}" Icon="Back"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </storeApps:VisualStateAwarePage.BottomAppBar>
@@ -55,7 +56,7 @@
                         <Grid.RowDefinitions>
                             <RowDefinition Height="180" />
                         </Grid.RowDefinitions>
-                        <Border BorderThickness="1" Margin="5,5,0,5" BorderBrush="#95a5a6">
+                        <Border BorderThickness="1" Margin="5,5,0,0" BorderBrush="#95a5a6">
                             <StackPanel Width="180" Background="#1abc9c">
                                 <TextBlock Text="{Binding Title}"
                            TextWrapping="Wrap"
@@ -83,7 +84,7 @@
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-        <StackPanel Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" Margin="0,100,0,0" HorizontalAlignment="Center" Grid.Row="1">
+        <StackPanel Visibility="{Binding NewListVisible, Converter={StaticResource BoolToVis}}" Margin="0,50,0,0" HorizontalAlignment="Center" Grid.Row="1">
             <TextBlock FontSize="20">Choose name</TextBlock>
             <TextBox MinWidth="200" Text="{Binding NewListName, Mode=TwoWay}">
                 <interactivity:Interaction.Behaviors>

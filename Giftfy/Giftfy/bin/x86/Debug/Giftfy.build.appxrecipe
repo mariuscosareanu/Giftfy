@@ -52,12 +52,19 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\SQLite.WP81\3.8.7.2\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\backIcon.png">
+      <PackagePath>Assets\backIcon.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\marius.cosareanu\Documents\GitHub\Giftfy\Giftfy\Giftfy\Assets\SplashScreen.scale-240.png">

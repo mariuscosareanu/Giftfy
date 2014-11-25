@@ -7,12 +7,14 @@
     <RootPropertyPathName Name="ShowEditList" />
     <RootPropertyPathName Name="TitleEdit" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="EditListCommand" />
+    <RootPropertyPathName Name="BackToStartCommand" />
     <RootPropertyPathName Name="SaveEditListCommand" />
     <RootPropertyPathName Name="CancelEditListCommand" />
-    <RootPropertyPathName Name="EditListCommand" />
     <RootPropertyPathName Name="DeleteListCommand" />
     <RootPropertyPathName Name="OpenPicturePickerCommand" />
     <RootPropertyPathName Name="NewListVisible" />
+    <RootPropertyPathName Name="CancelNewListCommand" />
     <RootPropertyPathName Name="ShowNewListCommand" />
     <RootPropertyPathName Name="NewListCommand" />
     <RootPropertyPathName Name="NewListName" />
@@ -53,21 +55,11 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Orientation" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="FontWeight" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Inlines" />
-      <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Visibility" />
@@ -82,9 +74,33 @@
       <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.BitmapIcon">
+      <RootProperty Name="UriSource" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
+      <RootMethod Name="GetBehaviors" />
+      <RootMethod Name="SetBehaviors" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Inlines" />
+      <RootProperty Name="TextWrapping" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+      <RootProperty Name="EventName" />
+      <RootProperty Name="Actions" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+      <RootProperty Name="Command" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="PrimaryCommands" />
-      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="Visibility" />
@@ -105,21 +121,10 @@
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Width" />
       <RootProperty Name="Command" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="EventName" />
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
-      <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />

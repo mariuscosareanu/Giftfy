@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.System;
-using Windows.UI.Input;
 using Windows.UI.Xaml.Input;
 using Giftfy.Models;
 using Giftfy.Services;
 using Microsoft.Practices.Prism.Commands;
 using Microsoft.Practices.Prism.Mvvm;
-using Microsoft.Practices.Prism.Mvvm.Interfaces;
 
 namespace Giftfy.ViewModels
 {
@@ -29,10 +23,12 @@ namespace Giftfy.ViewModels
 
             this.KeyUpNewList = new DelegateCommand<KeyRoutedEventArgs>(OnKeyUpNewList);
 
+            this.CancelNewListCommand = new DelegateCommand<TappedRoutedEventArgs>(OnCancelNewListCommand);
+
             this.GetLists();
         }
 
-        //#region properties
+        #region Properties
         private string _newListName;
 
         public string NewListName
@@ -56,16 +52,16 @@ namespace Giftfy.ViewModels
             get { return _lists; }
             set { SetProperty(ref _lists, value); }
         }
-        //#endregion
+        #endregion
 
-        //#region commands
+        #region Commands
         public DelegateCommand<TappedRoutedEventArgs> NewListCommand { get; set; }
 
         private void OnNewListCommand(TappedRoutedEventArgs eventArgs)
         {
             var newId = this._photoListsService.Add(new PhotoListModel
             {
-                Name = this._newListName
+                Name = this.NewListName
             });
 
             var newList = this._photoListsService.Get(newId);
@@ -98,9 +94,17 @@ namespace Giftfy.ViewModels
                 this.OnNewListCommand(null);
             }
         }
-        //#endregion
 
-        //#region init
+        public DelegateCommand<TappedRoutedEventArgs> CancelNewListCommand { get; set; }
+
+        private void OnCancelNewListCommand(TappedRoutedEventArgs eventArgs)
+        {
+            this.NewListVisible = false;
+            this.NewListName = string.Empty;
+        }
+        #endregion
+
+        #region Init
         public void GetLists()
         {
             this.Lists = new ObservableCollection<PhotoListViewModel>();
@@ -117,6 +121,6 @@ namespace Giftfy.ViewModels
                 this.Lists.Add(list);
             }
         }
-        //#endregion
+        #endregion
     }
 }
